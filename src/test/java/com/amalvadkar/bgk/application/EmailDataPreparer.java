@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class EmailDataPreparer {
-    public EmailData prepare(String firstname) {
+    public EmailData prepare(String birthdayFriendFirstName) {
         String subject = "Happy birthday!";
-        String body = String.format("Happy birthday, dear %s!", firstname);
+        String body = String.format("Happy birthday, dear %s!", birthdayFriendFirstName);
         return EmailData.from(subject, body);
     }
 
