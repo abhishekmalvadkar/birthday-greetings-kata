@@ -4,3 +4,10 @@ Given
     2) Today date
 When we call find() function with above params from BirthdayFriendsFinder
 Then it should return list of Friend's list who has birthday today
+
+Test: BirthdayFriendsFinderTest#should_return_friends_list_who_has_today_and_on_29_FEB_birthday
+Given
+    1) Friend's list
+    2) Today date is 28th FEB
+When we call find() function with above params from BirthdayFriendsFinder
+Then it should also return list of Friend's list who has birthday today or who has birthday on 29th FEB
