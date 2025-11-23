@@ -15,6 +15,18 @@ public class Friend {
     private final LocalDate birthDate;
     private final String email;
 
+    public boolean has29FebBirthDate() {
+        return hasFebBirthMonth() && has29BirthDay();
+    }
+
+    public boolean has29BirthDay() {
+        return birthDay() == 29;
+    }
+
+    public boolean hasFebBirthMonth() {
+        return birthMonth() == Month.FEBRUARY;
+    }
+
     public Month birthMonth(){
         return birthDate.getMonth();
     }

@@ -15,11 +15,7 @@ public class BirthdayFriendsFinder {
     }
 
     private static Predicate<Friend> ifTodayIs28FebAndFriendHasBirthdayOn29Feb(LocalDate today) {
-        return ifTodayIs28Feb(today).and(ifFriendHasBirthdayOn29Feb());
-    }
-
-    private static Predicate<Friend> ifFriendHasBirthdayOn29Feb() {
-        return friend -> friend.birthMonth() == Month.FEBRUARY && friend.birthDay() == 29;
+        return ifTodayIs28Feb(today).and(Friend::has29FebBirthDate);
     }
 
     private static Predicate<Friend> ifTodayIs28Feb(LocalDate today) {
