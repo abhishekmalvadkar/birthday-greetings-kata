@@ -1,0 +1,6 @@
+Test: BirthdayFriendsFinderTest#should_return_friends_list_who_has_today_birthday
+Given
+    1) Friend's list
+    2) Today date
+When we call find() function with above params from BirthdayFriendsFinder
+Then it should return list of Friend's list who has birthday today
