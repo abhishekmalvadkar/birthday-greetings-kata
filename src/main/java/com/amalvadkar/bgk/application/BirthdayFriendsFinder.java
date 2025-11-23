@@ -9,8 +9,12 @@ import java.util.function.Predicate;
 public class BirthdayFriendsFinder {
     public List<Friend> find(List<Friend> friends, LocalDate today) {
         return friends.stream()
-                .filter(ifBirthDateHasCurrentMonth(today).and(ifBirthDateHasCurrentDay(today)))
+                .filter(ifFriendHasBirthday(today))
                 .toList();
+    }
+
+    private static Predicate<Friend> ifFriendHasBirthday(LocalDate today) {
+        return ifBirthDateHasCurrentMonth(today).and(ifBirthDateHasCurrentDay(today));
     }
 
     private static Predicate<Friend> ifBirthDateHasCurrentDay(LocalDate today) {
