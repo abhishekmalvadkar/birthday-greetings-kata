@@ -33,7 +33,7 @@ public class BirthdayFriendsFinderTest {
     }
 
     @Test
-    void should_return_friends_list_who_has_today_and_on_29_FEB_birthday() {
+    void given_today_date_as_28_feb_it_should_return_friends_list_who_has_birthday_today_or_who_has_birthday_on_29_feb() {
         List<Friend> friends = List.of(
                 new Friend("John", "Doe", LocalDate.of(1982, Month.FEBRUARY, 28), "john.doe@foobar.com"),
                 new Friend("Mary", "Ann", LocalDate.of(1975, Month.OCTOBER, 11), "mary.ann@foobar.com"),
