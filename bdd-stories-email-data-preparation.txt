@@ -1,6 +1,20 @@
 Test: EmailDataPreparerTest#should_prepare_email_data_for_birthday_greeting_email
-Given Friend's firstname
+Given Birthday friend's firstname
 When we call prepare() function with above params from EmailDataPreparer
 Then it should return EmailData value object with below props
     1) Subject : Happy birthday!
-    2) Body : Happy birthday, dear <first_name>!
+    2) Body : Happy birthday, dear <birthday_friend_first_name>!
+
+Test: EmailDataPreparerTest#should_prepare_email_data_for_birthday_reminder_of_single_friend
+Given
+    1) Non Birthday friend's firstname
+    2) birthday friend's firstname
+    3) birthday friend's lastname
+When we call prepareBirthdayReminder() function with above params from EmailDataPreparer
+Then it should return EmailData value object with below props
+    1) Subject : Birthday Reminder
+    2) Body :
+        Dear <non_birthday_friend_first_name>,
+
+        Today is <birthday_friend_first_name> <birthday_friend_last_name>'s birthday.
+        Don't forget to send him a message !
